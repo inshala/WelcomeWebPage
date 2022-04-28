@@ -1,0 +1,113 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EBeyondproject</title>
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="icon" type="image/png" href="~/LoginImages/icons/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="~/fonts/iconic/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+        <link rel="stylesheet" type="text/css" href="~/vendor/css-hamburgers/hamburgers.min.css">
+        <link rel="stylesheet" type="text/css" href="~/vendor/animsition/css/animsition.min.css">
+        <link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+        <link rel="stylesheet" type="text/css" href="~/vendor/daterangepicker/daterangepicker.css">
+       
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+       
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+        <link rel="icon" type="image/png" href="~/LoginImages/icons/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="~/fonts/iconic/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+        <link rel="stylesheet" type="text/css" href="~/vendor/css-hamburgers/hamburgers.min.css">
+        <link rel="stylesheet" type="text/css" href="~/vendor/animsition/css/animsition.min.css">
+        <link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+        <link rel="stylesheet" type="text/css" href="~/vendor/daterangepicker/daterangepicker.css">
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+        
+
+
+    </environment>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+         <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" >D E S T U R E</a>
+         <nav class="navbar navbar-expand-lg navbar-toggleable-lg navbar-dark navbarColour">
+       @* navigation bar links and dropdown*@
+            <div class="  container-fluid">
+                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+                 <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">ABOUT</a>
+                 <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">SERVICES</a>
+                 <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">TESTIMONIAL</a>
+                  <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">PROTOFOLIO</a>
+                 <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">CONTACTS</a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon navbarTextColour"></span>
+                </button>
+                @*Language Dropdown starts here*@
+                <div class="dropdown ms-auto">
+                   <label for="languages"></label>
+                   <select name="languages" id="languages">
+                        <option value="English" class="dropdown">English</option>
+                        <option value="French" class="dropdown">French</option>
+                        <option value="German" class="dropdown">German</option>
+                        <option value="Italian" class="dropdown">Italian</option>
+                    </select>
+                </div>                                            
+            </div>
+        </nav>
+    </header>
+    @* navigation bar background image *@
+    <style>
+          .backimg 
+          {
+              background-image: url(img/103111.jpg);
+              width: 200%;
+              height: 100%;
+              background-repeat:no-repeat;
+              font-family: "Times New Roman", Times, serif;
+           }
+     </style>
+@*Transparent black box with welcome message*@
+             <div style="height:400px; width:3840px">
+                 <div class="backimg">
+                   <box class="blackbox">
+                       <br/>
+                       <h1 algin="center" class="WelcomeText">W E L C O M E T O</h1>
+                        <h2 class="OurTeamTextColor">D  E  S  T  U  R  E</h2>
+                   </box>
+                 </div>
+             </div>
+
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-bottom footer text-muted site-footer">
+        <div class="container">
+            Copyrights@2019  - DESTURE reserved all rights.  @*<a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>*@
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
